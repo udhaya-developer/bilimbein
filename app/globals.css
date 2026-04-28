@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+:root {
+  --bg: #000000;
+  --red: #E8001C;
+  --red-dark: #b5001a;
+  --red-glow: rgba(232, 0, 28, 0.3);
+  --white: #FFFFFF;
+  --gray: #888888;
+  --gray-light: #aaaaaa;
+  --surface: #0d0d0d; 
+  --surface-2: #111111;
+  --border: #1a1a1a;
+  --border-red: rgba(232, 0, 28, 0.4);
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: auto;
+  background: var(--bg);
+  color: var(--white);
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(232, 0, 28, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(232, 0, 28, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(232, 0, 28, 0.05) 0px, transparent 50%);
+  color: var(--white);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--red);
+  color: var(--white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+/* ─── Layout ─── */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Typography ─── */
+.heading-xl {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.heading-lg {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.heading-md {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.heading-sm {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.body-lg { font-size: 1.1rem; line-height: 1.7; color: var(--gray-light); }
+.body-md { font-size: 0.95rem; line-height: 1.6; color: var(--gray); }
+.body-sm { font-size: 0.85rem; line-height: 1.5; color: var(--gray); }
+
+.text-red { color: var(--red); }
+.text-white { color: var(--white); }
+.text-gray { color: var(--gray); }
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 36px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: var(--white);
+  border: 2px solid var(--red);
+}
+.btn-primary:hover {
+  background: transparent;
+  color: var(--red);
+  box-shadow: 0 0 30px var(--red-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+  box-shadow: 0 0 20px var(--red-glow);
+  transform: translateY(-2px);
+}
+
+/* ─── Section spacing ─── */
+.section {
+  position: relative;
+  padding: 120px 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 16px;
+}
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--red);
+  box-shadow: 0 0 10px var(--red);
+}
+
+/* ─── Canvas overlay ─── */
+.canvas-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Utility ─── */
+.text-center { text-align: center; }
+.relative { position: relative; }
+.z-1 { z-index: 1; }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-4 { gap: 16px; }
+.gap-8 { gap: 32px;justify-content: center;display: flex; margin: 30px 0px;}
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+@media (max-width: 768px) {
+  .section { padding: 80px 0; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .heading-xl { font-size: clamp(2.5rem, 12vw, 4rem); }
+}
+
+/* ─── Glow effects ─── */
+.glow-red {
+  box-shadow: 0 0 40px var(--red-glow), 0 0 80px rgba(232,0,28,0.1);
+}
+.glow-text-red {
+  text-shadow: 0 0 30px var(--red-glow);
+}
+
+/* ─── Divider ─── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* ─── Red line accent ─── */
+.red-line {
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--red);
+  margin-bottom: 24px;
+}
+
+/* footer shouldn't be sticky */
+footer, .footer-section {
+  position: relative !important;
+  z-index: 100;
+  background: var(--bg);
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
