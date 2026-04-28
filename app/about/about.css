@@ -235,7 +235,6 @@
 
 .leader-card:hover {
   border-color: rgba(232, 0, 28, 0.3);
-  transform: translateY(-10px);
 }
 
 .leader-img-container {
@@ -252,9 +251,6 @@
   filter: grayscale(0.2) contrast(1.1);
 }
 
-.leader-card:hover .leader-img {
-  transform: scale(1.05);
-}
 
 .leader-overlay {
   position: absolute;
@@ -379,7 +375,6 @@
 
 .team-card:hover {
   border-color: var(--red);
-  transform: translateY(-10px);
 }
 
 .team-img {
